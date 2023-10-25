@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#4285f4"/>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="manifest" href="/manifest.json">
-    <script src="/index.js"></script>
-    <title>Mi App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4285f4" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="manifest" href="/manifest.json">
+  <script src="/index.js"></script>
+  <title>Mi App</title>
 </head>
+
 <body>
-    <h1 class="class=display-1">PWA</h1>
-   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <h1 class="class=display-1">PWA</h1>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-       
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-          </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
-      </div> 
-      </nav>
-      <img src="/src/img_girl.jpg" alt="Italian Trulli" width="600" height="500">
-    
+      </div>
+    </div>
+  </nav>
+  <img src="/src/img_girl.jpg" alt="Italian Trulli" width="600" height="500">
+  <script>
+    if (navigator.serviceWorker) {
+
+      navigator.serviceWorker.register("sw.js").then((evt) => {
+
+        console.log("Sw Instalado")
+        console.log(evt)
+
+
+
+      }).catch((error) => {
+        console.log("Error al instalar el sw")
+        console.log(error)
+
+
+      })
+
+
+    }
+
+  </script>
+
 </body>
+
 </html>
